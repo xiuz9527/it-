@@ -1,8 +1,6 @@
 # it-项目管理
  <el-main>
-              <!-- 我们开始写中间的部分 
-              login_container  大的div添加独有的样式 例如背景图
-              -->
+              
               <div class="login_container">
                 <el-card>
                       <div class="login-title">账户密码登录</div>

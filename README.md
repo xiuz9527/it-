@@ -4,8 +4,7 @@
               <div class="login_container">
                 <el-card>
                       <div class="login-title">账户密码登录</div>
-                      <!-- 我们需要添加一个表单的输入框 并且将账号 跟密码进行添加校验 -->
-                      <!-- :rules  校验规则 -->
+                      
                       <el-form ref="loginForm" :model="loginForm" class="login-form" :rules="loginRules"   >
                         <!-- 双向绑定  loginForm 用户名  -->
                         <el-form-item prop="username">

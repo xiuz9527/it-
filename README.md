@@ -493,21 +493,7 @@ queryAll(){
           <el-button type="primary" @click="repair">确 定</el-button>
         </div>
       </el-dialog>      
- repair() {
-      if(this.aTable.pic == '' || this.aTable.pic == null) {
-        return
-      }
-      this.$http.post('/a/repair',this.aTable).then(res=>{
-        if(res.data.code === 200) {
-          this.$message.success('报修成功')
-          this.dialogFormVisible = false
-        }
-       })
-    },
-    startRepair(oid){
-      this.aTable.str = oid
-      this.dialogFormVisible = true
-    },
+ 
 
 <el-form :inline="true" :model="params" class="demo-form-inline">
           <el-form-item label="报修服务">
@@ -594,3 +580,18 @@ queryAll(){
           <el-button type="primary" @click="submitForm('form')">确 定</el-button>
         </span>
     </el-dialog>
+repair() {
+      if(this.aTable.pic == '' || this.aTable.pic == null) {
+        return
+      }
+      this.$http.post('/a/repair',this.aTable).then(res=>{
+        if(res.data.code === 200) {
+          this.$message.success('报修成功')
+          this.dialogFormVisible = false
+        }
+       })
+    },
+    startRepair(oid){
+      this.aTable.str = oid
+      this.dialogFormVisible = true
+    },

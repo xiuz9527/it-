@@ -365,21 +365,7 @@ methods: {
           },
       }
 
-<el-form :model="form" :rules="rules" ref="form" label-width="100px" style="width: 600px">
-      <el-form-item label="房间类型：" prop="name">
-        <el-input v-model="form.name"></el-input>
-      </el-form-item>
-      <el-form-item label="房间简介：" prop="area">
-        <el-input v-model="form.area"></el-input>
-      </el-form-item>
-      <el-form-item label="星级：" prop="starLevel">
-        <el-rate v-model="form.starLevel" style="margin-top:10px"></el-rate>
-      </el-form-item>
-      <el-form-item label="价格：" prop="score">
-        <el-input v-model="form.score" ></el-input>
-      </el-form-item>
-      <el-form-item label="设施服务：" prop="tagArr">
-<el-tag
+
             style="margin: 0 5px"
             :key="tag"
             v-for="tag in form.tagArr"

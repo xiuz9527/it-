@@ -193,25 +193,7 @@
               <template slot-scope="scope">
                       {{ scope.row.gender == 1 ? "男" :  "女" }}
                   </template>
-            </el-table-column>
-              <el-table-column prop="type" label="角色"
-                align="center">
-                <template slot-scope="scope">
-                        {{ scope.row.type ==0 ? "普通用户" : scope.row.type == 1 ? "管理员" : scope.row.processStatus == 3? "无" : "无"}}
-                    </template>
-              </el-table-column>
-              <el-table-column label="操作"
-              align="center" width="200px">
-                  <template slot-scope="scope">
-                      <el-button size="mini" type="primary" round
-                      @click="handleUpdate(scope.row)">编辑</el-button>
-      
-                    <el-button size="mini" type="danger" round
-                      @click="del(scope.row.id)">删除</el-button> 
-                  </template>
-              </el-table-column>
-          </el-table>
-
+          
       <el-dialog title="修改信息" :visible.sync="dialogFormVisible"
       width="400px">
           <el-form :model="updateForm" :rules="updateRules"

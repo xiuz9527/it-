@@ -71,61 +71,7 @@
       })
     }
   }
-  <el-main>
-            <!-- 加一个进度条 -->
-          <div class="reg-container">
-            <el-steps :active="active"  class="steps">
-               <el-step title="验证用户名"></el-step> 
-               <el-step title="确认密码"></el-step> 
-               <el-step title="注册成功"></el-step>
-           </el-steps>
-            <el-form :model="form"  ref="form" :rules="rules"   class="form" label-width="100px" >
-              <!-- 用户名 -->
-              <div v-show="active===1">
-                  <el-form-item label="用户名：" prop="username">
-                    <el-input v-model="form.username"></el-input>
-                </el-form-item>
-                  <el-form-item>
-                    <el-button type="warning" @click="nextPwd">下一步，设置密码</el-button>
-                  </el-form-item>  
-              </div>
-              <!-- 密码 -->
-              <div v-show="active===2">
-                <el-form-item label="姓名" prop="nickname">
-                   <el-input v-model="form.nickname"></el-input>
-                </el-form-item>
-                <el-form-item label="密码" prop="password">
-                   <el-input v-model="form.password" show-password></el-input>
-                </el-form-item>
-                <el-form-item label="确认密码" prop="confirmPassword">
-                   <el-input v-model="form.confirmPassword" show-password></el-input>
-                </el-form-item>
-                <el-form-item label="联系方式" prop="phone">
-                   <el-input v-model="form.phone"></el-input>
-                </el-form-item>
-                <!-- 创建下拉框 并且创建角色信息 -->
-                <el-form-item label="角色" prop="type">
-                  <el-select v-model="form.type" placeholder="请选择">
-                     <el-option v-for="item in options" 
-                     :key="item.value" :label="item.label" :value="item.value" :disabled="item.disabled"> 
-                    </el-option> 
-                  </el-select>
-                </el-form-item>
-                <el-form-item>
-                    <el-button @click="reg" type="warning">注册</el-button>
-                </el-form-item>
-              </div>
-              <!-- 注册成功 -->
-              <div v-show="active===3">
-                  <el-result icon="success" title="注册成功" subTitle="可点击下方按钮去登陆~">
-                  <template slot="extra">
-                    <el-button type="primary" size="medium" @click="$router.push('/')">登录</el-button>
-                  </template>
-                </el-result>  
-              </div>
-            </el-form>
-          </div>
-        </el-main> 
+
 
 <script>
   export default {
@@ -365,21 +311,7 @@ methods: {
           },
       }
 
-<el-form :model="form" :rules="rules" ref="form" label-width="100px" style="width: 600px">
-      <el-form-item label="房间类型：" prop="name">
-        <el-input v-model="form.name"></el-input>
-      </el-form-item>
-      <el-form-item label="房间简介：" prop="area">
-        <el-input v-model="form.area"></el-input>
-      </el-form-item>
-      <el-form-item label="星级：" prop="starLevel">
-        <el-rate v-model="form.starLevel" style="margin-top:10px"></el-rate>
-      </el-form-item>
-      <el-form-item label="价格：" prop="score">
-        <el-input v-model="form.score" ></el-input>
-      </el-form-item>
-      <el-form-item label="设施服务：" prop="tagArr">
-<el-tag
+
             style="margin: 0 5px"
             :key="tag"
             v-for="tag in form.tagArr"
